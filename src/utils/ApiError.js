@@ -3,7 +3,7 @@ class ApiError extends Error {
         statusCode,
         message = 'An error occurred while processing your request',
         error = [],
-        statck = ""
+        stack = ""
 
     ) {
         super(message)
@@ -14,8 +14,8 @@ class ApiError extends Error {
         this.error = error
 
 
-        if (statck) {
-            this.stack = statck
+        if (stack) {
+            this.stack = stack
         } else {
             Error.captureStackTrace(this, this.constructor)
         }
